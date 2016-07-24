@@ -1,18 +1,14 @@
-% % capturing screenshot and saving it to sdcard of the android device
     system('adb shell screencap -p /sdcard/screen2.png');
 
-% %  pulling image to your working directory
     system('adb pull /sdcard/screen2.png');
-    
-% % reading the image
+
 im=imread('screen2.png');
 imshow(im);
-% % storing the notes of a song in a matrix
+
 mat1=['C','C','D','C','F', 'E','C','C','D','C','G','F', 'C', 'C', 'K', 'A', 'F', 'E','D', '5', '5','A', 'F', 'G', 'E' ];
 for a = 1:25
     switch mat1(a)
  case 'C'
-     % % Simulating the touch with the coordinates
        cmd=['adb shell input swipe 64 621 65 622 '];
 system(cmd);  
       
